@@ -1,5 +1,4 @@
-
-class Weather{
+class Weather {
   final String cityName;
   final double temperature;
   final String description;
@@ -20,14 +19,13 @@ class Weather{
 
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
-      cityName: json['name'], 
-      description: json['weather'][0]['description'] as String,
-      // description: json['weather']['description'],
-      humidity: json['main']['humidity'],
-      sunrise: json['sys']['sunrise'],
-       sunset: json['sys']['sunset'],
-       temperature: json['main']['temp'] -273.15,
-       windSpeed: json['wind']['speed']);
+        cityName: json['name'],
+        description: json['weather'][0]['description'] as String,
+        // description: json['weather']['description'],
+        humidity: json['main']['humidity'],
+        sunrise: json['sys']['sunrise'],
+        sunset: json['sys']['sunset'],
+        temperature: json['main']['temp'] - 273.15,
+        windSpeed: json['wind']['speed']);
   }
-
 }

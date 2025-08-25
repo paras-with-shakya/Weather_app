@@ -1,9 +1,9 @@
 import 'package:sun_set/models/weather_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
 class WeatherServices {
-   
-   final String apikey = '5b9aacbd850d6c15c631d4cfeb70fdef';
+  final String apikey = '5b9aacbd850d6c15c631d4cfeb70fdef';
 
   //  Future<Weather> featchWeather(String cityName) async {
   //    final url = Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apikey');

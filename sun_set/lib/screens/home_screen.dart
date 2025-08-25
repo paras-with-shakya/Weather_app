@@ -31,12 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
         _isLoading = false;
       });
     } catch (e) {
-      print('Error fetching weather data: $e');
+      // print('Error fetching weather data: $e');
       ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Error fetching weather data: $e')),
+        SnackBar(content: Text('Error fetching weather data: $e')),
       );
       setState(() {
-      _isLoading = false;
+        _isLoading = false;
       });
     }
   }
@@ -103,21 +103,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 20,
                 ),
                 ElevatedButton(
-                    onPressed: _getWeather,
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            const Color.fromARGB(209, 125, 155, 170),
-                        foregroundColor: const Color.fromARGB(255, 243, 33, 128),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))),
-                    child: const Text(
-                      'Get Weather',
-                      style: TextStyle(fontSize: 18),
-                    )),
+                  onPressed: _getWeather,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF3F51B5), // Indigo Blue
+                    foregroundColor:
+                        const Color(0xFFFFC107), // Amber (Text/Icon Color)
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: const Text(
+                    'Get Weather',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
                 if (_isLoading && _weather == null)
                   const Padding(
                     padding: EdgeInsets.all(30),
-                    child: CircularProgressIndicator(color: Color.fromARGB(255, 246, 174, 4)),
+                    child: CircularProgressIndicator(
+                        color: Color.fromARGB(255, 246, 174, 4)),
                   ),
                 if (_weather != null) WeatherCard(weather: _weather!),
               ],
