@@ -5,7 +5,7 @@ import 'package:sun_set/screens/home_screen.dart';
 void main() {
   runApp(const MyApp());
 }
-
+// The app is weather app that fetches and displays weather information based on user input.
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
     
